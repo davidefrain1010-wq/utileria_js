@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/utileria.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="contenedor-formulario">
+
+        <header>
+            <img src="img/hola.jpg" alt="Imagen de bienvenida" style="max-width:100%; border-radius:8px; margin-bottom:12px;" />
+            <h1>Bienvenid@ a mi sitio web</h1>
+            <p class="subtítulo">Login con validaciones</p>
+        </header>
+
+        <form id="formularioPrincipal" class="formulario" novalidate>
+
+            <div class="grupo-formulario">
+                <label for="nombre">Escribe tu nombre completo aquí</label>
+                <input type="text" id="nombre" placeholder="Ej: Pedro Pérez" required />
+                <div class="mensaje-error" id="errorNombre"></div>
+            </div>
+
+            <div class="grupo-doble">
+                <div class="grupo-formulario">
+                    <label for="email">Escribe tu email aquí</label>
+                    <input type="email" id="email" placeholder="ana@ejemplo.com" required />
+                    <div class="mensaje-error" id="errorEmail"></div>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="telefono">Escribe tu número de teléfono aquí</label>
+                    <input type="tel" id="telefono" placeholder="+52 55 1234 5678" />
+                    <div class="mensaje-error" id="errorTelefono"></div>
+                </div>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="fechaNacimiento">Escribe tu fecha de nacimiento aquí</label>
+                <input type="date" id="fechaNacimiento" required />
+                <div class="mensaje-error" id="errorFecha"></div>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="password">Escribe tu contraseña deseada aquí</label>
+                <input type="password" id="password" placeholder="Mín. 8 caracteres, mayúscula, minúscula, número y especial" required />
+                <div class="mensaje-error" id="errorPassword"></div>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="4" placeholder="Por favor, escribe tu consulta..." required></textarea>
+                <div class="mensaje-error" id="errorMensaje"></div>
+            </div>
+
+            <button type="submit" class="boton-enviar" id="btnEnviar">
+                Enviar mensaje
+            </button>
+
+            <div class="mensaje-error texto-centrado mt-12" id="errorGeneral"></div>
+        </form>
+
+        <div style="margin-top:20px; text-align:center;">
+            <button type="button" class="boton-enviar" id="btnAbrirModalDemo" style="background:var(--color-secundario);">
+                Ver tu edad aquí
+            </button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="modal-overlay" id="modalEdad">
+        <div class="modal-contenido">
+            <img src="img/pastel.png" alt="Pastel de cumpleaños" style="max-width:100%; height:auto; border-radius:12px; margin-bottom:16px; max-height:200px; object-fit:cover;" />
+            <h2>Tu edad ha sido calculada</h2>
+            <div class="edad-resultado" id="edadMostrada">--</div>
+            <div class="edad-etiqueta">años</div>
+            <p id="modalMayorEdad" style="font-weight:500; margin-bottom:18px; color:var(--color-primario);"></p>
+            <button class="btn-cerrar-modal" id="btnCerrarModal">Cerrar</button>
+        </div>
+    </div>
+
+</body>
+</html>
